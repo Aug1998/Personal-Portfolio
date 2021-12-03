@@ -1,0 +1,45 @@
+$color: #DC3737;
+
+//pagination
+.paginationContainer{
+    margin-top: 30px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagNumber, .pagPrev, .pagNext{
+    background-color: transparent;
+    color: $color;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.pagNumber{
+    margin-bottom: 4px;
+    font-size: 1rem;
+    padding-bottom: 1px;
+}
+
+.pagNext{
+    font-size: 1.1rem;
+    &:hover{
+        transform: translateX(3px);
+    }
+}
+
+.pagPrev{
+    font-size: 1.1rem;
+    &:hover{
+        transform: translateX(-3px);
+    }
+}
+
+.pagActive{
+    border-bottom: solid 1px;
+}

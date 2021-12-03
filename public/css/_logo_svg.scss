@@ -1,0 +1,80 @@
+.logo_svg{
+    transform: scaleX(-1) rotateZ(-8deg);
+    right: 12vw; bottom: 8vh;
+    z-index: 1;
+        #gear, #cabeza, #mejilla{
+            fill: $black;
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        #ojo{
+            fill: $primary;
+            transform: rotateZ(10deg);
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+        #mejilla{
+            transform: rotateZ(10deg);
+            transform-origin: center;
+            transform-box: fill-box;
+        }
+
+        #gear{
+            animation: gear 18s infinite linear;
+        }
+    }
+
+
+@keyframes gear{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+.logo_hero{
+    height: 76vh;
+    position: absolute;
+    #white-screen{
+        fill: $hero_bg;
+    }
+}
+
+.logo_loadingscreen{
+    height: 16vh;
+    #white-screen{
+        fill: $white;
+    }
+}
+
+.logo_sidenav{
+    height: 70%;
+    display: none;
+    overflow: hidden;
+    #white-screen{
+        fill: $white;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .logo_hero{
+        display: none;
+    }
+    .logo_sidenav{
+        display: block;
+        height: 70%;
+    }  
+}
+
+
+@media screen and (max-width: 1024px){
+    .logo_hero{
+        height: 66vh;
+        margin-right: -50px;
+    }  
+
+}

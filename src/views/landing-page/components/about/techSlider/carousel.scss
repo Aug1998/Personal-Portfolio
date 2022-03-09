@@ -1,0 +1,41 @@
+$slide-height: 80px;
+$slide-height-mobile: 60px;
+
+#react-techs{
+
+    .slick-slide{
+        div{
+            height: $slide-height + 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+            overflow: hidden;
+        }
+    }
+}
+.tech{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    img{
+        width: $slide-height;
+        transition: 0.1s;
+    }
+    &:hover{
+        img{
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+@media screen and (max-width: 570px){
+    .tech{
+        img{
+            width: $slide-height-mobile;
+        }
+    }
+}

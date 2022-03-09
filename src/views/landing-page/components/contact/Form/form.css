@@ -1,0 +1,207 @@
+.g-recaptcha div {
+  overflow: hidden;
+}
+
+#react-form {
+  margin-top: 30px;
+}
+
+form {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr auto 1fr;
+      grid-template-columns: 1fr 1fr auto 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 20px;
+      grid-template-areas: " nombre apellido mensaje mensaje" " email numero mensaje mensaje" " . . captcha enviar";
+}
+
+.field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-family: "Poppins";
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+input[type="text"], input[type="email"], .form_mensaje textarea {
+  width: 100%;
+  color: #2c2c2c;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border: solid 1px rgba(43, 43, 43, 0.2);
+  border-left: solid 4px rgba(43, 43, 43, 0.2);
+  background-color: white;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, .form_mensaje textarea:focus {
+  border-color: #DC3737;
+  outline: none;
+}
+
+input {
+  height: 35px;
+}
+
+.form_mensaje textarea {
+  resize: none;
+  cursor: text;
+  height: 134px;
+}
+
+.form_submit {
+  display: none;
+}
+
+.dummy_submit {
+  font-family: "Poppins";
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 1;
+  font-size: 1.2rem;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  background-color: #DC3737;
+  border: solid 2px #DC3737;
+  color: #fff;
+}
+
+.dummy_submit:hover {
+  background-color: transparent;
+  color: #DC3737;
+}
+
+.form_nombre {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: nombre;
+}
+
+.form_apellido {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: apellido;
+}
+
+.form_email {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: email;
+}
+
+.form_numero {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: numero;
+}
+
+.form_mensaje {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: mensaje;
+}
+
+.dummy_submit {
+  -ms-grid-row: 3;
+  -ms-grid-column: 4;
+  grid-area: enviar;
+}
+
+.g-recaptcha {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: captcha;
+}
+
+@media screen and (max-width: 768px) {
+  .form_nombre {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: nombre;
+  }
+  .form_apellido {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: apellido;
+  }
+  .form_email {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: email;
+  }
+  .form_numero {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-area: numero;
+  }
+  .form_mensaje {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: mensaje;
+  }
+  .dummy_submit {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: enviar;
+  }
+  .g-recaptcha {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: captcha;
+  }
+  form {
+    padding: 0 8%;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+    row-gap: 20px;
+        grid-template-areas: "nombre nombre apellido apellido" "email email numero numero" "mensaje mensaje mensaje mensaje" "captcha captcha captcha captcha" ". enviar enviar .";
+  }
+}
+/*# sourceMappingURL=form.css.map */

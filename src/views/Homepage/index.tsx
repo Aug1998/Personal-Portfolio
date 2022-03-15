@@ -1,10 +1,10 @@
-import About from './components/about'
-import Contact from './components/contact/contact'
-import Footer from './components/footer'
-import Hero from './components/hero'
+import About from './sections/about'
+import Contact from './sections/contact/contact'
+import Footer from './sections/footer/footer'
+import Hero from './sections/hero'
 import Navbar from './components/Navbar'
-import Services from './components/services'
-import MyWork from './components/myWork/myWork'
+import Services from './sections/services/services'
+import MyWork from './sections/myWork/myWork'
 
 export default function Homepage() {
   return (

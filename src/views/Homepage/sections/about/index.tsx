@@ -1,4 +1,4 @@
-import TechSlider from './techSlider/techSlider'
+import TechSlider from '../../components/techSlider/techSlider'
 
 export default function About() {
   return (

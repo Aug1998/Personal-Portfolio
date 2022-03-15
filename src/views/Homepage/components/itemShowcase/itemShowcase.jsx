@@ -3,7 +3,7 @@ import './portfolio.scss'
 import PortfolioItem from './portfolioItem';
 import PortfolioButton from './portfolioButton';
 import { portfolioData } from './portfolioData';
-import Pagination from '../../../../../Components/Pagination/pagination';
+import Pagination from '../../../../Components/Pagination/pagination';
 import $ from "jquery";
 
 class ItemShowcase extends Component {

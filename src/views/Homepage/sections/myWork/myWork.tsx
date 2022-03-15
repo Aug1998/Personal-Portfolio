@@ -1,4 +1,4 @@
-import ItemShowcase from "./itemShowcase/itemShowcase";
+import ItemShowcase from "../../components/itemShowcase/itemShowcase";
 
 export default function MyWork() {
   return (

@@ -1,4 +1,3 @@
-import React from 'react'
 import TechSlider from './techSlider/techSlider'
 
 export default function About() {

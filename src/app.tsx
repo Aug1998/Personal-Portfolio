@@ -1,8 +1,7 @@
-import React from 'react'
-import LandingPage from './views/landing-page/landingPage'
+import Homepage from './views/Homepage'
 
 export default function App() {
   return (
-      <LandingPage/>
+      <Homepage/>
   )
 }

@@ -1,16 +1,16 @@
-import About from './components/about/about'
+import About from './components/about'
 import Contact from './components/contact/contact'
 import Footer from './components/footer'
 import Hero from './components/hero'
-import NavBar from './components/navBar'
-import Portfolio from './components/portfolio'
+import Navbar from './components/Navbar'
 import Services from './components/services'
+import MyWork from './components/myWork/myWork'
 
-export default function LandingPage() {
+export default function Homepage() {
   return (
       <body>
         {/* Navbar Component */}
-        <NavBar/>
+        <Navbar/>
 
         {/* Hero Component */}
         <Hero/>
@@ -19,7 +19,7 @@ export default function LandingPage() {
         <Services/>
 
         {/* My work Component */}
-        <Portfolio/>
+        <MyWork/>
 
         {/* About-me Component */}
         <About/>

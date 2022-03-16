@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "views/Homepage/components/Button";
 import WexdevLogo from "../../components/WexdevLogo";
 
 export default function Hero() {
@@ -8,8 +9,8 @@ export default function Hero() {
       <h2>Augusto P.</h2>
       <p>Desarrollador Web</p>
       <div className="pair_of_buttons">
-        <button className="button btn_primary contact_btn">Contacto</button>
-        <button className="button btn_secondary services_btn">Servicios</button>
+         <Button type="primary">Contacto</Button>
+         <Button type="transparent">Servicios</Button>
       </div>
     </div>
 

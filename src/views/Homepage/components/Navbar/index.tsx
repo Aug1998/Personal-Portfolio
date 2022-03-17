@@ -1,12 +1,14 @@
 import styled from "styled-components"
 import theme from "resources/theme"
 import { useState } from "react";
+import Container from "../styledComponents/Container";
 
 export default function Navbar() {
   const [activeOption, setActiveOption] = useState("home");
 
    return (
-      <NavbarContainer>
+      <Container>
+         <NavbarContainer>
          <h1>A.</h1>
          <Nav>
             <NavOption isActive={activeOption === 'home'}>Inicio</NavOption>
@@ -15,13 +17,14 @@ export default function Navbar() {
             <NavOption isActive={activeOption === 'about'}>Sobre mí</NavOption>
             <NavOption isActive={activeOption === 'contact'}>Contacto</NavOption>
          </Nav>
-      </NavbarContainer>
+         </NavbarContainer>
+      </Container>
    )
 }
 
 const NavbarContainer = styled.div`
+  width: 100%;
   display: flex;
-  padding: 0 8%;
   align-items: center;
   justify-content: space-between;
   background-color: ${theme.white};
@@ -29,7 +32,7 @@ const NavbarContainer = styled.div`
   transition: 0.4s;
   h1{
       cursor: pointer;
-      font-size: 3.4rem;
+      font-size: 3rem;
       height: max-content;
       color: ${theme.primary};
       margin: 0;

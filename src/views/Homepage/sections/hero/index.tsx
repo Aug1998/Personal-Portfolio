@@ -28,16 +28,11 @@ const HeroContainer = styled.div`
    background-color: ${theme.hero_bg};
    display: flex;
    justify-content: space-between;
+   align-items: center;
 `
 
 const WexdevLogoHero = styled(WexdevLogo)`
-   height: 70vh;
-   position: absolute;
-`
-
-const ButtonsContainer = styled.div`
-   display: flex;
-   align-items: flex-end;
+   height: 500px;
 `
 
 const HeroContentContainer = styled.div`
@@ -45,7 +40,7 @@ const HeroContentContainer = styled.div`
    flex-direction: column;
    justify-content: center;
    width: 50%;
-   padding-top: 70px;
+   padding-top: 20px;
    h2{
       font-size: 4.2rem;
       color: $title;
@@ -56,4 +51,9 @@ const HeroContentContainer = styled.div`
       margin-top: 5px;
       margin-bottom: 70px;
    }
+`
+
+const ButtonsContainer = styled.div`
+   display: flex;
+   align-items: flex-end;
 `

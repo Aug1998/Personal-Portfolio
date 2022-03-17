@@ -14,7 +14,6 @@ export default function WexdevLogo( { className }: any) {
 }
 
 const WexdevSvg = styled.svg`
-
    transform: scaleX(-1) rotateZ(-8deg);
    right: 12vw; bottom: 8vh;
    z-index: 1;

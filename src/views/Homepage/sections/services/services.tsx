@@ -1,10 +1,10 @@
-import React from 'react'
+import Title from 'views/Homepage/styled-components/Title'
 
 export default function Services() {
   return (
       <div className="services">
       <a id="anchor_services_btn" href="#"></a>
-    <h2 className="title centered">Servicios</h2>
+      <Title>Servicios</Title>
     <div className="services_content">
       
       {/* <!--Wordpress--> */}

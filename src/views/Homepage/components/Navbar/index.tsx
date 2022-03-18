@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import theme from "resources/theme"
 import { useState } from "react";
-import Container from "../styledComponents/Container";
+import Container from "views/Homepage/styled-components/Container";
 
 export default function Navbar() {
   const [activeOption, setActiveOption] = useState("home");

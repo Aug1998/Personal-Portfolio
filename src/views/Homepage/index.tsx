@@ -5,6 +5,7 @@ import Hero from './sections/hero'
 import Navbar from './components/Navbar'
 import Services from './sections/services/services'
 import MyWork from './sections/myWork/myWork'
+import MySkills from './sections/mySkills'
 
 export default function Homepage() {
   return (
@@ -14,6 +15,9 @@ export default function Homepage() {
 
         {/* Hero Component */}
         <Hero/>
+
+        {/* Services Component */}
+        <MySkills/>
 
         {/* Services Component */}
         <Services/>

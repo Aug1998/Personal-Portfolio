@@ -26,12 +26,12 @@ import { VscArrowRight } from 'react-icons/vsc';
                <p>{info1}</p>
                <p>{info2}</p>
                <p>{info3}</p>
-               <a target="_blank" href={link}>
-                  <div className="portfolio_item_link">
-                        <p>Visitar la web</p>
-                        <BsArrowRight/>
+               <PortfolioItemLink target="_blank" href={link}>
+                  <div>
+                     <p>Visitar la web</p>
+                     <BsArrowRight/>
                   </div>
-               </a> 
+               </PortfolioItemLink> 
             </PortfolioItemInfoContainer>
       </PortfolioItemContainer>
    );
@@ -105,5 +105,44 @@ const PortfolioItemInfoContainer = styled.div<IPortfolioItemInfoContainer>`
    }
    a p{
       font-weight: 500;
+   }
+`
+const PortfolioItemLink = styled.a`
+div{
+   display: flex;
+   align-items: center;
+   position: relative;
+   width: max-content;
+   &::before{
+    content: "";
+    position: absolute;
+    height: 100%; width: 100%;
+    left: -100%; bottom: 0;
+    border-bottom: solid 1px ${theme.hover_link_decoration};
+    transition: 0.4s;
+   }
+   p{
+      margin-right: 20px;
+      transition: 0.2s;
+      z-index: 3;
+      color: ${theme.hover_link};
+   }
+   svg{
+      margin-top: 1px;
+      color: ${theme.hover_link_decoration};
+
+      height: 20px;
+      width: 20px;
+      transition: all 0.3s;
+      transform: translateX(-15px);
+   }
+   &:hover{
+      &::before{
+         left: 0;
+      }
+      svg{
+         transform: translateX(0px);
+         }
+      }
    }
 `

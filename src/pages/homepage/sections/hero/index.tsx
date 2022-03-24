@@ -1,8 +1,8 @@
 import theme from "resources/theme";
 import styled from "styled-components";
-import Button from "views/Homepage/styled-components/Button";
-import Container from "views/Homepage/styled-components/Container";
-import WexdevLogo from "../../components/WexdevLogo";
+import Button from "pages/homepage/styled-components/Button";
+import Container from "pages/homepage/styled-components/Container";
+import WexdevLogo from "pages/homepage/components/WexdevLogo";
 
 export default function Hero() {
   return (

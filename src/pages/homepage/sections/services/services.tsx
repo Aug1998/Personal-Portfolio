@@ -1,4 +1,4 @@
-import Title from 'views/Homepage/styled-components/Title'
+import Title from "pages/homepage/styled-components/Title"
 
 export default function Services() {
   return (

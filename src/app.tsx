@@ -1,4 +1,4 @@
-import Homepage from './views/Homepage'
+import Homepage from './pages/homepage'
 
 export default function App() {
   return (

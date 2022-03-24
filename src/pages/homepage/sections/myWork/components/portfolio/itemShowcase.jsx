@@ -3,8 +3,8 @@ import './portfolio.scss'
 import PortfolioItem from './portfolioItem.tsx';
 import PortfolioButton from './portfolioButton';
 import { portfolioData } from './portfolioData';
-import Pagination from '../../../../Components/Pagination/pagination';
 import $ from "jquery";
+import Pagination from 'Components/Pagination/pagination';
 
 class ItemShowcase extends Component {
     state = {  

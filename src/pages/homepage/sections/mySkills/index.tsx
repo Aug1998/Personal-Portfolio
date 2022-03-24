@@ -1,7 +1,7 @@
 import theme from 'resources/theme'
 import styled from 'styled-components'
-import Container from 'views/Homepage/styled-components/Container'
-import Title from 'views/Homepage/styled-components/Title'
+import Container from 'pages/homepage/styled-components/Container'
+import Title from 'pages/homepage/styled-components/Title'
 import Timeline from './components/Timeline'
 
 export default function MySkills() {

@@ -1,4 +1,4 @@
-import TechSlider from '../../components/techSlider/techSlider'
+import Carousel from "./Carousel/techsCarousel"
 
 export default function About() {
   return (
@@ -21,7 +21,7 @@ export default function About() {
         </div>
 
         <div className="techs">
-            <TechSlider/>
+            <Carousel/>
         </div>
     </div>
   )

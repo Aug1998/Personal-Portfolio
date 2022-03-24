@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Container from "views/Homepage/styled-components/Container";
-import Title from "views/Homepage/styled-components/Title";
-import ItemShowcase from "../../components/itemShowcase/itemShowcase";
+import Container from "pages/homepage/styled-components/Container";
+import Title from "pages/homepage/styled-components/Title";
+import ItemShowcase from "./components/portfolio/itemShowcase";
 
 export default function MyWork() {
   return (

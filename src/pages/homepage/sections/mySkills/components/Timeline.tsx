@@ -58,8 +58,8 @@ export default function Timeline() {
                <TimelineItemText>Part-time job | Wordpress Support</TimelineItemText>
             </TimelineItem>
             <TimelineItem>
-               <TimelineItemTitle>Java | Object Oriented Programming</TimelineItemTitle>
-               <TimelineItemText>Course | UTN Rosario</TimelineItemText>
+               <TimelineItemTitle>Java</TimelineItemTitle>
+               <TimelineItemText>Object Oriented Programming Course | UTN Rosario</TimelineItemText>
             </TimelineItem>
          </ItemContainer>
       </TimelineYearContainer>

@@ -10,7 +10,7 @@ interface ButtonProps{
    onClick?: () => void;
 }
 
-export default function Button( {children, type, className}: ButtonProps ) {
+export default function Button( {children, type}: ButtonProps ) {
    switch (true) {
       case type === 'primary':
          return (

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-import "./form.scss";
 import styled from "styled-components";
-import $ from "jquery";
 import theme from "resources/theme";
 
 export default function ContactForm() {
+
+   const formSubmitRef = useRef(null)
+
   const [userInput, setUserInput] = useState({
     name: "",
     surname: "",
@@ -13,23 +14,15 @@ export default function ContactForm() {
     number: "",
   });
 
-  useEffect(() => {
-    $(".dummy_submit").on("click", (e) => {
-      e.preventDefault();
-      handleSubmit();
-    });
-  }, []);
-
   const handleChange = (event, fieldName) => {
     setUserInput({ [fieldName]: event.target.value });
   };
 
   const handleSubmit = () => {
     if (validateEmail()) {
-      console.log("all good");
-      $("#form_submit").trigger("click");
+      formSubmitRef.current.click();
     } else {
-      console.log("errors in form");
+      console.log("Errors in form");
       return;
     }
   };
@@ -89,8 +82,8 @@ export default function ContactForm() {
 
   return (
     <Form id="contact-form" autoComplete="off" onSubmit={sendEmail}>
-      <Field className="for}m_nombre">
-        <label htmlFor="form_name">Nombre</label>
+      <Field gridArea={"nombre"}>
+        <FormLabel htmlFor="form_name">Nombre</FormLabel>
         <FormInput
           id="form_name"
           type="text"
@@ -101,8 +94,8 @@ export default function ContactForm() {
           onChange={(event) => handleChange(event, "name")}
         />
       </Field>
-      <Field className="form_apellido">
-        <label htmlFor="form_surname">Apellido</label>
+      <Field gridArea={"apellido"}>
+        <FormLabel htmlFor="form_surname">Apellido</FormLabel>
         <FormInput
           id="form_surname"
           type="text"
@@ -113,8 +106,8 @@ export default function ContactForm() {
           onChange={(event) => handleChange(event, "surname")}
         />
       </Field>
-      <Field className="form_email">
-        <label htmlFor="form_email">Email</label>
+      <Field gridArea={"email"}>
+        <FormLabel htmlFor="form_email">Email</FormLabel>
         <FormInput
           id="form_email"
           type="email"
@@ -123,8 +116,8 @@ export default function ContactForm() {
           onChange={(event) => handleChange(event, "email")}
         />
       </Field>
-      <Field className="form_numero">
-        <label htmlFor="form_number">Teléfono</label>
+      <Field gridArea={"numero"}>
+        <FormLabel htmlFor="form_number">Teléfono</FormLabel>
         <FormInput
           id="form_number"
           type="text"
@@ -134,22 +127,24 @@ export default function ContactForm() {
           onChange={(event) => handleChange(event, "number")}
         />
       </Field>
-      <Field className="form_mensaje">
-        <label htmlFor="message">Mensaje</label>
+      <Field className="form_mensaje" gridArea={"mensaje"}>
+        <FormLabel htmlFor="message">Mensaje</FormLabel>
         <FormTextarea name="message" maxLength="800"></FormTextarea>
       </Field>
-      <div
+      <CaptchaContainer
+        gridArea="captcha"
         className="g-recaptcha"
         data-sitekey="6Lfno2kaAAAAAA0bQ8baSxANX6Fkt7pDT0bOI9RG"
-      ></div>
+      ></CaptchaContainer>
       <input
+         ref={formSubmitRef} 
         id="form_submit"
         className="form_submit"
         type="submit"
         name="submit"
         value="Enviar"
       />
-      <button className="dummy_submit">Enviar</button>
+      <DummySubmitButton gridArea={"enviar"} onClick={handleSubmit} >Enviar</DummySubmitButton>
     </Form>
   );
 }
@@ -158,6 +153,7 @@ const Field = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  grid-area: ${props => props.gridArea};
 `;
 
 const Form = styled.form`
@@ -171,6 +167,25 @@ const Form = styled.form`
     " nombre apellido mensaje mensaje"
     " email numero mensaje mensaje"
     " . . captcha enviar";
+   & input[type="submit"]{
+      display: none;
+   }
+   @media screen and (max-width: 768px){
+      padding: 0 8%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+        grid-template-areas: 
+            "nombre nombre apellido apellido"
+            "email email numero numero"
+            "mensaje mensaje mensaje mensaje"
+            "captcha captcha captcha captcha"
+            ". enviar enviar ."
+        ;
+   }
 `;
 
 const FormInput = styled.input`
@@ -204,4 +219,44 @@ const FormTextarea = styled.textarea`
   resize: none;
   cursor: text;
   height: 134px;
+`;
+
+const FormLabel = styled.label`
+   font-family: "Poppins";
+   width: max-content;
+   font-weight: 500;
+   font-size: 0.9rem;
+   color: $theme;
+   margin-bottom: 8px;
+   position: relative;
+`;
+
+const CaptchaContainer = styled.div`
+   grid-area: ${props => props.gridArea};
+   div{
+      overflow: hidden;
+   }
+`;
+
+const DummySubmitButton = styled.button`
+   grid-area: ${props => props.gridArea};
+   font-family: "Poppins";
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: 0.2s;
+   z-index: 1;
+   font-size: 1.2rem;
+   align-items: center;
+   outline: none;
+   cursor: pointer;
+   background-color: ${theme.primary};
+   border: solid 2px ${theme.primary};
+   color: ${theme.white};
+   &:hover{
+      background-color: transparent;
+      color: ${theme.primary};
+   }
 `;

@@ -1,4 +1,4 @@
-import NewForm from "./components/form/Form"
+import Form from "./components/form/ContactForm"
 
 export default function Contact() {
   return (
@@ -9,7 +9,7 @@ export default function Contact() {
         ¿Tenés un <span>producto</span> y querés <span>vender</span> o potenciar tus ventas por el canal digital? 
         Sea lo que sea, no dudes en <span>dejar tu consulta</span>:
         </p>
-        <NewForm/>
+        <Form/>
     </div>  
   )
 }

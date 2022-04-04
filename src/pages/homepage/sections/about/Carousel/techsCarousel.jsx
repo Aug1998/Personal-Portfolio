@@ -14,7 +14,7 @@ import logo_photoshop from "./img/photoshop.png";
 import logo_illustrator from "./img/illustrator.png";
 import logo_mysql from "./img/mysql.png";
 
-export default class AutoPlay extends Component {
+export default class Carousel extends Component {
   state = {
     items: [
       { id: 1, title: "HTML", img: logo_html },

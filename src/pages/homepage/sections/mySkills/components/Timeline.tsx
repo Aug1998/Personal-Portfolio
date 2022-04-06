@@ -85,7 +85,7 @@ const TimelineYearContainer = styled.div`
 const Year = styled.h5`
    color: ${theme.primary};
    text-align: center;
-   padding-top: 13px;
+   padding-top: 14px;
 `
 
 const ItemContainer = styled.div`

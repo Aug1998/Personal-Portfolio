@@ -157,7 +157,7 @@ const Field = styled.div`
 `;
 
 const Form = styled.form`
-  width: 100%;
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr auto 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -222,11 +222,10 @@ const FormTextarea = styled.textarea`
 `;
 
 const FormLabel = styled.label`
-   font-family: "Poppins";
    width: max-content;
    font-weight: 500;
    font-size: 0.9rem;
-   color: $theme;
+   color: ${theme.theme};
    margin-bottom: 8px;
    position: relative;
 `;

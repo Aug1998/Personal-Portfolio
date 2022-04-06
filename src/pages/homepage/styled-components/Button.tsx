@@ -34,7 +34,7 @@ export default function Button( {children, type}: ButtonProps ) {
 }
 
 const BaseButton = styled.button`
-   display: flex;
+   display: inline-flex;
    align-items: center;
    position: relative;
    transition: 0.3s;

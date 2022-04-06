@@ -26,11 +26,13 @@ const MySkillsContainer = styled.div`
    align-items: center;
    flex-direction: column;
 `
+
 const MySkillsContent = styled.div`
    display: grid;
    grid-template-columns: 1fr 1fr;
    width: 100%;
 `
+
 const SkillsGrid = styled.div`
    background-color: gray;
 `

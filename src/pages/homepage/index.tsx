@@ -4,30 +4,32 @@ import Footer from './sections/footer/footer'
 import Hero from './sections/hero'
 import Navbar from './components/Navbar'
 import MySkills from './sections/mySkills'
+import GlobalStyle from './styled-components/GlobalStyle'
 
 export default function Homepage() {
-  return (
+   return (
       <body>
-        {/* Navbar Component */}
-        <Navbar/>
+         <GlobalStyle/>
+         {/* Navbar Component */}
+         <Navbar/>
 
-        {/* Hero Component */}
-        <Hero/>
+         {/* Hero Component */}
+         <Hero/>
 
-        {/* Services Component */}
-        <MySkills/>
+         {/* Services Component */}
+         <MySkills/>
 
-        {/* About-me Component */}
-        <About/>
+         {/* About-me Component */}
+         <About/>
 
-        {/* Contact-me Component */}
-        <Contact/>
+         {/* Contact-me Component */}
+         <Contact/>
 
-        {/* Footer Component */}
-        <Footer/>
+         {/* Footer Component */}
+         <Footer/>
 
-        <script src="scripts.js"></script>
-        <script src="services_mobile.js"></script>
+         <script src="scripts.js"></script>
+         <script src="services_mobile.js"></script>
       </body>
-  )
+   )
 }

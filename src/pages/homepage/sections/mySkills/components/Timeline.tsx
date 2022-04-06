@@ -108,11 +108,9 @@ const TimelineItemTitle = styled.h5`
    margin-bottom: 4px;
 `
 const TimelineItemText = styled.p`
-   font-size: 0.85rem;
    color: ${theme.TimelineSubtitle};
 `
 
 const TimelineItemLink = styled.a`
-   font-size: 0.85rem;
    color: ${theme.TimelineSubtitle};
 `

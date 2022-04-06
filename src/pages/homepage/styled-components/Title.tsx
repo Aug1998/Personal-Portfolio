@@ -12,7 +12,7 @@ export default function Title({children}: any) {
 
 const CustomTitle = styled.h2`
    font-family: 'Poppins', sans-serif;
-   font-size: 2.2rem;
+   font-size: 2rem;
    color: ${theme.title};
    font-weight: 700;
    position: relative;

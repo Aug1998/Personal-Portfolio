@@ -7,8 +7,12 @@ export default function Timeline() {
       <TimelineYearContainer>
          <Year>2022</Year>
          <ItemContainer>
-            
-         </ItemContainer>
+            <TimelineItem>
+                  <TimelineItemTitle>Xometry</TimelineItemTitle>
+                  <TimelineItemText>Full-time job | React Developer | React + TypeScript</TimelineItemText>
+                  <TimelineItemLink target="_blank" href="https://www.xometry.com/">Go to Xoemtry's Website {'->'}</TimelineItemLink>
+               </TimelineItem>
+            </ItemContainer>
       </TimelineYearContainer>
       <TimelineYearContainer>
          <Year>2021</Year>
@@ -21,7 +25,6 @@ export default function Timeline() {
                <TimelineItemTitle>UX/UI Design</TimelineItemTitle>
                <TimelineItemText>CoderHouse</TimelineItemText>
             </TimelineItem>
-            
          </ItemContainer>
       </TimelineYearContainer>
       <TimelineYearContainer>
@@ -75,7 +78,7 @@ const TimelineContainer = styled.div`
 const TimelineYearContainer = styled.div`
    width: 100%;
    display: grid;
-   grid-template-columns: 1fr 5fr;
+   grid-template-columns: 1fr 6fr;
    margin-top: 16px;
 `
 
@@ -96,11 +99,20 @@ const ItemContainer = styled.div`
 `
 
 const TimelineItem = styled.div`
+   box-sizing: border-box;
 `
+
 const TimelineItemTitle = styled.h5`
+   font-size: 0.9rem;
    color: ${theme.black};
+   margin-bottom: 4px;
 `
 const TimelineItemText = styled.p`
-   font-size: 0.9rem;
-   color: ${theme.blackTranslucent};
+   font-size: 0.85rem;
+   color: ${theme.TimelineSubtitle};
+`
+
+const TimelineItemLink = styled.a`
+   font-size: 0.85rem;
+   color: ${theme.TimelineSubtitle};
 `

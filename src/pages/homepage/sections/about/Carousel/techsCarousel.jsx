@@ -70,7 +70,7 @@ export default class Carousel extends Component {
       ],
     };
     return (
-      <div>
+      <div className="techs">
         <Slider {...settings}>
           {items.map((item) => (
             <div className="tech" key={item.id}>

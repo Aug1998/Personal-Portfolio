@@ -29,7 +29,6 @@ const MySkillsContainer = styled.div`
 const MySkillsContent = styled.div`
    display: grid;
    grid-template-columns: 1fr 1fr;
-   height: 600px;
    width: 100%;
 `
 const SkillsGrid = styled.div`

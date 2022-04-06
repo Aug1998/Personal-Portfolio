@@ -3,7 +3,6 @@ import Contact from './sections/contact/contact'
 import Footer from './sections/footer/footer'
 import Hero from './sections/hero'
 import Navbar from './components/Navbar'
-import Services from './sections/services/services'
 import MySkills from './sections/mySkills'
 
 export default function Homepage() {
@@ -17,9 +16,6 @@ export default function Homepage() {
 
         {/* Services Component */}
         <MySkills/>
-
-        {/* Services Component */}
-        <Services/>
 
         {/* About-me Component */}
         <About/>

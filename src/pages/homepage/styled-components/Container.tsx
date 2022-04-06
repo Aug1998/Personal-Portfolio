@@ -5,6 +5,7 @@ interface IContainer {
    children?: ReactNode;
    backgroundColor?: string;
    verticalPadding?: string;
+   direction?: string;
 }
 
 interface IParentContainer {
@@ -13,13 +14,14 @@ interface IParentContainer {
 
 interface IContentContainer {
    verticalPadding?: string;
+   direction?: string;
 }
 
 
-export default function Container({children={}, backgroundColor = "", verticalPadding="0"}: IContainer) { 
+export default function Container({children={}, backgroundColor = "", verticalPadding="0", direction="row"}: IContainer) { 
    return (
      <ParentContainer backgroundColor={backgroundColor}>
-        <ContentContainer verticalPadding={verticalPadding}>
+        <ContentContainer verticalPadding={verticalPadding} direction={direction}>
           {children}
         </ContentContainer>
      </ParentContainer>
@@ -36,6 +38,8 @@ const ParentContainer = styled.div<IParentContainer>`
 
 const ContentContainer = styled.div<IContentContainer>`
    display: flex;
+   flex-direction: ${props => props.direction};
+   align-items: center;
    justify-content: center;
    max-width: 1200px;
    width: 100%;

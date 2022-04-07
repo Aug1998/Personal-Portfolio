@@ -1,29 +1,60 @@
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Slider from "react-slick";
+import theme from "resources/theme";
 import styled from "styled-components";
+import useElementWidth from "./useElementWidth";
 
-export default function WordSlider() {
-   const items = [
-      "Technology",
-      "Fashion",
-      "Sport",
-      "Science",
-      "Music",
-      "Travel",
-      "Friends",
-      "Self Improvement",
+interface IWordSlider {
+   direction?: 'normal' | 'backwards';
+}
+
+export default function WordSlider( {direction = 'normal'}:IWordSlider) {
+   const Sport = useElementWidth();
+   const Science = useElementWidth();
+   const Music = useElementWidth();
+   const Friends = useElementWidth();
+   const Improvement = useElementWidth();
+
+   const sliderItems = [
+      {
+         word: 'Sport',
+         width: Sport.elementWidth,
+         ref: Sport.elementRef,
+      },
+      {
+         word: 'Science',
+         width: Science.elementWidth,
+         ref: Science.elementRef,
+      },
+      {
+         word: 'Music',
+         width: Music.elementWidth,
+         ref: Music.elementRef,
+      },
+      {
+         word: 'Friends',
+         width: Friends.elementWidth,
+         ref: Friends.elementRef,
+      },
+      {
+         word: 'Improvement',
+         width: Improvement.elementWidth,
+         ref: Improvement.elementRef,
+      }
    ]
 
    const settings = {
       dots: false,
       infinite: true,
-      slidesToShow: 3,
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 4000,
+      speed: 6000,
       autoplaySpeed: 0,
       cssEase: "linear",
       draggable: false,
       swipe: false,
+      variableWidth: true,
       responsive: [
          {
             breakpoint: 1024,
@@ -50,33 +81,56 @@ export default function WordSlider() {
    };
 
    return (
-      <div className="techs">
+      <SliderContainer direction={direction}>
         <Slider {...settings}>
-          {items.map((item, index) => (
-            <SliderItemContainer key={index}>
-               <SliderItemWord>
-                  {item}
-               </SliderItemWord>
-              <h2>
-                 -
-              </h2>
-            </SliderItemContainer>
-          ))}
+          {sliderItems.map((item, index) => {
+             return ( 
+               <div style={{ width: item.width }}>
+                  <SliderItemContainer ref={item.ref} key={index}>
+                     <SliderItemWord direction={direction}>
+                        {item.word}
+                     </SliderItemWord>
+                     <SliderItemDash/>
+                  </SliderItemContainer>
+               </div>
+             )
+          })}
         </Slider>
-      </div>
+      </SliderContainer>
    );
 }
 
+interface ISliderContainer {
+   direction?: 'normal' | 'backwards';
+}
+
+const SliderContainer = styled.div<ISliderContainer>`
+   transform: ${props => props.direction === 'backwards' ? 'scaleX(-1)' : ''};
+`
 
 const SliderItemContainer = styled.div`
    display: flex;
-   justify-content: center;
    align-items: center;
    width: 100%;
    height: 100%;
 `
 
-const SliderItemWord = styled.p`
-   font-size: 3rem;
+interface ISliderItemWord {
+   direction?: 'normal' | 'backwards';
+}
+
+const SliderItemWord = styled.p<ISliderItemWord>`
+color: white;
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+   text-shadow: -1px -1px 0 ${theme.primary}, 1px -1px 0 ${theme.primary}, -1px 1px 0 ${theme.primary}, 1px 1px 0 ${theme.primary};
+   font-size: 5rem;
    text-transform: uppercase;
+   transform: ${props => props.direction === 'backwards' ? 'scaleX(-1)' : ''};
+`
+
+const SliderItemDash = styled.div`
+   width: 72px;
+   height: 7px;
+   border: solid 1px ${theme.primary};
+   margin: 0 34px;
 `

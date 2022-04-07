@@ -26,16 +26,12 @@ export default function About() {
                   </AboutText>
             </AboutContainer>
          </Container>
-         <DummyWordSlider/>
+         <WordSlider direction="backwards"/>
+
       </>
    )
 }
 
-const DummyWordSlider = styled.div`
-   width: 100%;
-   background-color: red;
-   height: 100px;
-`
 
 const AboutContainer = styled.div`
    width: 100%;

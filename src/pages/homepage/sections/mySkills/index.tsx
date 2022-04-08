@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Container from 'pages/homepage/styled-components/Container'
 import Title from 'pages/homepage/styled-components/Title'
 import Timeline from './components/Timeline'
+import Skills from './components/skills'
 
 export default function MySkills() {
   return (
@@ -10,8 +11,7 @@ export default function MySkills() {
       <MySkillsContainer>
          <Title>My Skills & Experience</Title>
          <MySkillsContent>
-            <SkillsGrid>
-            </SkillsGrid>
+            <Skills/>
             <Timeline/>
          </MySkillsContent>
       </MySkillsContainer>
@@ -28,11 +28,9 @@ const MySkillsContainer = styled.div`
 `
 
 const MySkillsContent = styled.div`
+   margin-top: 36px;
    display: grid;
    grid-template-columns: 1fr 1fr;
+   column-gap: 70px;
    width: 100%;
-`
-
-const SkillsGrid = styled.div`
-   background-color: gray;
 `

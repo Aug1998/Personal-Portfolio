@@ -80,22 +80,24 @@ const TimelineYearContainer = styled.div`
    width: 100%;
    display: grid;
    grid-template-columns: 1fr 6fr;
-   margin-top: 16px;
+   &:not(:first-of-type){
+      margin-top: 34px;
+   }
 `
 
 const Year = styled.h5`
    color: ${theme.primary};
    text-align: center;
-   padding-top: 14px;
+   padding-top: 2px;
 `
 
 const ItemContainer = styled.div`
    width: 100%;
    display: flex;
    flex-direction: column;
-   padding: 12px 14px;
+   padding: 0 14px;
    & div:not(:last-of-type){
-      margin-bottom: 22px;
+      margin-bottom: 14px;
    }
 `
 

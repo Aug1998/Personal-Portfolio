@@ -20,6 +20,7 @@ export default function Timeline() {
             <TimelineItem>
                <TimelineItemTitle>MangooDev</TimelineItemTitle>
                <TimelineItemText>Full-time job | Fullstack Developer | React + java</TimelineItemText>
+               <TimelineItemLink target="_blank" href="https://www.mangoodev.com/">Go to MangooDev's Website {'->'}</TimelineItemLink>
             </TimelineItem>
             <TimelineItem>
                <TimelineItemTitle>UX/UI Design</TimelineItemTitle>
@@ -94,7 +95,7 @@ const ItemContainer = styled.div`
    flex-direction: column;
    padding: 12px 14px;
    & div:not(:last-of-type){
-      margin-bottom: 18px;
+      margin-bottom: 22px;
    }
 `
 
@@ -105,12 +106,15 @@ const TimelineItem = styled.div`
 const TimelineItemTitle = styled.h5`
    font-size: 0.9rem;
    color: ${theme.black};
-   margin-bottom: 4px;
+   margin-bottom: 7px;
 `
+
 const TimelineItemText = styled.p`
    color: ${theme.TimelineSubtitle};
 `
 
 const TimelineItemLink = styled.a`
+   display: inline-block;
    color: ${theme.TimelineSubtitle};
+   margin-top: 6px;
 `

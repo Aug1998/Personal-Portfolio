@@ -1,8 +1,7 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import theme from "resources/theme";
 import styled from "styled-components";
-import useElementWidth from "./useElementWidth";
+import useElementWidth from "hooks/useElementWidth";
 
 interface IWordSlider {
    direction?: 'normal' | 'backwards';
@@ -14,10 +13,17 @@ export default function WordSlider( {direction = 'normal'}:IWordSlider) {
    const Music = useElementWidth();
    const Friends = useElementWidth();
    const Improvement = useElementWidth();
+   const Tech = useElementWidth();
 
-   const sliderItems = [
+   interface IElement {
+      word: string,
+      width: number | any,
+      ref: any,
+   }
+
+   const sliderItems:Array<IElement> = [
       {
-         word: 'Sport',
+         word: 'Sports',
          width: Sport.elementWidth,
          ref: Sport.elementRef,
       },
@@ -40,11 +46,17 @@ export default function WordSlider( {direction = 'normal'}:IWordSlider) {
          word: 'Improvement',
          width: Improvement.elementWidth,
          ref: Improvement.elementRef,
-      }
+      },
+      {
+         word: 'Tech',
+         width: Tech.elementWidth,
+         ref: Tech.elementRef,
+      },
    ]
 
    const settings = {
       dots: false,
+      pauseOnHover: false,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -85,9 +97,9 @@ export default function WordSlider( {direction = 'normal'}:IWordSlider) {
         <Slider {...settings}>
           {sliderItems.map((item, index) => {
              return ( 
-               <div style={{ width: item.width }}>
+               <div style={{ width: item.width}}>
                   <SliderItemContainer ref={item.ref} key={index}>
-                     <SliderItemWord direction={direction}>
+                     <SliderItemWord isUneven={index % 2 !== 0} direction={direction}>
                         {item.word}
                      </SliderItemWord>
                      <SliderItemDash/>
@@ -105,6 +117,8 @@ interface ISliderContainer {
 }
 
 const SliderContainer = styled.div<ISliderContainer>`
+display: flex;
+justify-content: space-between;
    transform: ${props => props.direction === 'backwards' ? 'scaleX(-1)' : ''};
 `
 
@@ -117,10 +131,14 @@ const SliderItemContainer = styled.div`
 
 interface ISliderItemWord {
    direction?: 'normal' | 'backwards';
+   isUneven: boolean;
 }
 
 const SliderItemWord = styled.p<ISliderItemWord>`
-color: white;
+   font-family: ${props => props.isUneven ? 'serif' : 'sans-serif'};
+   font-style: ${props => props.isUneven ? 'italic' : 'normal'};
+   padding-right: ${props => props.isUneven ? '10px' : '0'};
+   color: white;
    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
    text-shadow: -1px -1px 0 ${theme.primary}, 1px -1px 0 ${theme.primary}, -1px 1px 0 ${theme.primary}, 1px 1px 0 ${theme.primary};
    font-size: 5rem;

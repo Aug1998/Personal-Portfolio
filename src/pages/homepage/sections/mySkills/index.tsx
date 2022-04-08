@@ -6,13 +6,13 @@ import Timeline from './components/Timeline'
 
 export default function MySkills() {
   return (
-   <Container backgroundColor={theme.white} verticalPadding="80px">
+   <Container backgroundColor={theme.white} verticalPadding="100px">
       <MySkillsContainer>
          <Title>My Skills & Experience</Title>
          <MySkillsContent>
             <SkillsGrid>
             </SkillsGrid>
-            <Timeline></Timeline>
+            <Timeline/>
          </MySkillsContent>
       </MySkillsContainer>
    </Container>

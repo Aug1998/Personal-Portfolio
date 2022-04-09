@@ -7,10 +7,10 @@ import WordSlider from "./components/wordSlider"
 
 export default function About() {
    return (
-      <>
+      <AboutSectionContainer>
          <WordSlider/>
          <Container verticalPadding="80px" direction="column">
-            <AboutContainer>
+            <AboutContentContainer>
                   <AboutTitleContainer>
                      <Title>Sobre mí</Title>
                   </AboutTitleContainer>
@@ -24,20 +24,20 @@ export default function About() {
                         <Button type="transparent">LinkedIn</Button>
                      </ButtonsContainer>
                   </AboutText>
-            </AboutContainer>
+            </AboutContentContainer>
          </Container>
-         <DummyWordSlider/>
-      </>
+         <WordSlider direction="backwards"/>
+      </AboutSectionContainer>
    )
 }
 
-const DummyWordSlider = styled.div`
+
+const AboutSectionContainer = styled.div`
    width: 100%;
-   background-color: red;
-   height: 100px;
+   padding: 0 0 100px;
 `
 
-const AboutContainer = styled.div`
+const AboutContentContainer = styled.div`
    width: 100%;
    display: grid;
    grid-template-columns: 9fr 10fr;

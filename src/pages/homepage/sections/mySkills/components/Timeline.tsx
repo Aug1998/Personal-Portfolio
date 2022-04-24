@@ -89,6 +89,7 @@ const Year = styled.h5`
    color: ${theme.primary};
    text-align: center;
    padding-top: 2px;
+   font-size: 0.95rem;
 `
 
 const ItemContainer = styled.div`
@@ -106,17 +107,19 @@ const TimelineItem = styled.div`
 `
 
 const TimelineItemTitle = styled.h5`
-   font-size: 0.9rem;
+   font-size: 0.95rem;
    color: ${theme.black};
    margin-bottom: 7px;
 `
 
 const TimelineItemText = styled.p`
+   font-size: 0.95rem;
    color: ${theme.TimelineSubtitle};
 `
 
 const TimelineItemLink = styled.a`
    display: inline-block;
    color: ${theme.TimelineSubtitle};
+   font-size: 0.95rem;
    margin-top: 6px;
 `

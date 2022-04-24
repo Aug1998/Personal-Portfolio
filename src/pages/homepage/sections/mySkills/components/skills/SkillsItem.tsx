@@ -36,6 +36,7 @@ const ImageCircle = styled.div`
    border-radius: 1000px;
    background-color: ${theme.grey_bg};
    margin-bottom: 8px;
+   box-shadow: 0 2px 2px #00000029;
 `
 
 const ItemImage = styled.img`

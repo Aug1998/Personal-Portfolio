@@ -6,6 +6,7 @@ interface IContainer {
    backgroundColor?: string;
    verticalPadding?: string;
    direction?: string;
+   className?: any;
 }
 
 interface IParentContainer {
@@ -18,9 +19,9 @@ interface IContentContainer {
 }
 
 
-export default function Container({children={}, backgroundColor = "", verticalPadding="0", direction="row"}: IContainer) { 
+export default function Container({className, children={}, backgroundColor = "", verticalPadding="0", direction="row"}: IContainer) { 
    return (
-     <ParentContainer backgroundColor={backgroundColor}>
+     <ParentContainer className={className} backgroundColor={backgroundColor}>
         <ContentContainer verticalPadding={verticalPadding} direction={direction}>
           {children}
         </ContentContainer>

@@ -7,7 +7,7 @@ export default function Navbar() {
   const [activeOption, setActiveOption] = useState("home");
 
    return (
-      <Container>
+      <NavbarWrapper backgroundColor="transparent">
          <NavbarContainer>
          <h1>A.</h1>
          <Nav>
@@ -18,16 +18,25 @@ export default function Navbar() {
             <NavOption isActive={activeOption === 'contact'}>Contacto</NavOption>
          </Nav>
          </NavbarContainer>
-      </Container>
+      </NavbarWrapper>
    )
 }
 
+
+
+const NavbarWrapper = styled(Container)`
+   position: fixed;
+   top: 0;
+   left: 0;
+`
+
 const NavbarContainer = styled.div`
   width: 100%;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${theme.white};
+  background-color: transparent;
   z-index: 3;
   transition: 0.4s;
   h1{
@@ -46,12 +55,14 @@ const NavOption = styled.button<{ isActive?: boolean }>`
     background: none;
     border: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-transform: uppercase;
     transition: color 0.3s;
     color: ${props => props.isActive ? theme.primary : theme.black};
     position: relative;
-    padding-bottom: 4px;
+    padding-bottom: 5px;
     &::before{
         content: "";
         position: absolute;

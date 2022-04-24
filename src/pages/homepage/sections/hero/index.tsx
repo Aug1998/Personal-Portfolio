@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Button from "pages/homepage/styled-components/Button";
 import Container from "pages/homepage/styled-components/Container";
 import WexdevLogo from "pages/homepage/components/WexdevLogo";
+import GithubIcon from "pages/homepage/components/githubIcon";
+import LinkedinIcon from "pages/homepage/components/linkedinIcon";
 
 export default function Hero() {
   return (
@@ -11,6 +13,10 @@ export default function Hero() {
          <HeroContentContainer>
             <h2>Augusto P.</h2>
             <p>Desarrollador Web</p>
+            <SocialIconsContainer>
+               <GithubIcon/>
+               <LinkedinIcon/>
+            </SocialIconsContainer>
             <ButtonsContainer>
                <Button type="primary">Contacto</Button>
                <Button type="transparent">Servicios</Button>
@@ -23,16 +29,17 @@ export default function Hero() {
 }
 
 const HeroContainer = styled.div`
-   height: calc(100vh - 80px);
+   height: 100vh;
    width: 100%;
    background-color: ${theme.hero_bg};
    display: flex;
    justify-content: space-between;
    align-items: center;
+   padding-right: 60px;
 `
 
 const WexdevLogoHero = styled(WexdevLogo)`
-   height: 500px;
+   height: 400px;
 `
 
 const HeroContentContainer = styled.div`
@@ -43,17 +50,27 @@ const HeroContentContainer = styled.div`
    padding-top: 20px;
    h2{
       font-size: 4.2rem;
-      color: $title;
+      color: ${theme.black};
    }
    p{
       font-size: 1.5rem;
-      color: $subtitle;
+      color: ${theme.black};
       margin-top: 5px;
-      margin-bottom: 70px;
+      margin-bottom: 20px;
    }
 `
 
 const ButtonsContainer = styled.div`
    display: flex;
    align-items: flex-end;
+   margin-bottom: 40px;
+`
+
+const SocialIconsContainer = styled.div`
+   display: flex;
+   align-items: flex-end;
+   & svg:first-child{
+      margin-right: 10px;
+   }
+   margin-bottom: 50px;
 `

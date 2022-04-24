@@ -5,6 +5,7 @@ import Hero from './sections/hero'
 import Navbar from './components/Navbar'
 import MySkills from './sections/mySkills'
 import GlobalStyle from './styled-components/GlobalStyle'
+import DotsNav from './components/dotsNav'
 
 export default function Homepage() {
    return (
@@ -12,6 +13,7 @@ export default function Homepage() {
          <GlobalStyle/>
          {/* Navbar Component */}
          <Navbar/>
+         <DotsNav/>
 
          {/* Hero Component */}
          <Hero/>
